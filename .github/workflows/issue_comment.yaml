@@ -8,8 +8,8 @@ jobs:
   comment-with-action:
     runs-on: ubuntu-latest
     steps:
-      - name: dump github context
-        run: echo  '${{ github.event.issue.number }}'      ## '${{ toJSON(github.events) }}' | jq       it gives all detail of github events
+      - name: "dump github context"
+        run: echo  '${{ toJSON(github.event )}}'      ## '${{ toJSON(github.events) }}' | jq       it gives all detail of github events
         shell: bash
       
 
