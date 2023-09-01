@@ -1,0 +1,26 @@
+name: Hello World workflow   ## name of the workflow
+
+on:  ## trigger  worklow on below events
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:   ## this gives a button that we can click in ui to run this workflow without having to push on on repository
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Hello World
+        run: echo "hello world mate"
+        shell: bash
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye world
+        run: echo "goodbye world mate"
+        shell: bash
