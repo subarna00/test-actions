@@ -9,12 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "dump github context"
-        run: echo  '${{ toJSON(github.event )}}' | jq     ## '${{ toJSON(github.events) }}' | jq       it gives all detail of github events
+        run: echo  '${{ toJSON(github.event) }}' | jq     ## '${{ toJSON(github.events) }}' | jq       it gives all detail of github events
         shell: bash
-      
-
       - name: Create comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
