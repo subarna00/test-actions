@@ -11,8 +11,8 @@ jobs:
       - name: "dump github context"
         run: echo  ${{ toJSON(github.event.issue.number) }} | jq     ## '${{ toJSON(github.events) }}' | jq       it gives all detail of github events
         shell: bash
-      # - name: Create comment
-      #   uses: peter-evans/create-or-update-comment@v3
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v3
       #   with:
       #     issue-number: ${{ github.event.issue.number }}
       #     body: |
